@@ -6,7 +6,7 @@ author:     luokangyuan
 catalog: true
 tags:
     - SpringBoot
-    - Exception
+    - yichang
 ---
 
 ### SpringBoot中对异常的统一处理
