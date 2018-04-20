@@ -1,3 +1,17 @@
+
+---
+layout:     post
+title:     SpringBoot中的日志框架
+subtitle:   SpringBoot中的日志框架学习
+date:       2018-040-18
+author:     luokangyuan
+catalog: true
+tags:
+    - SpringBoot
+    - 开发技巧
+    - Debug
+---
+
 # SpringBoot中的日志框架学习
 
 日志框架中我们选择的是SLF4J日志门面。日志实现选择的是Logback。调用日志记录的方法，不应该直接调用实现类，而是调用日志抽象层里面的方法。
