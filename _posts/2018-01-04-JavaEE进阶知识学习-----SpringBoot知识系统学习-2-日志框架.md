@@ -2,7 +2,6 @@
 layout:     post
 title:     SpringBoot中的日志框架
 subtitle:   SpringBoot中的日志框架学习
-date:       2018-04-18
 author:     luokangyuan
 catalog: true
 tags:
