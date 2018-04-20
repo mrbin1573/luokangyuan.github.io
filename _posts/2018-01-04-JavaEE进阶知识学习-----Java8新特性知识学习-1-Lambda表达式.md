@@ -5,7 +5,7 @@ subtitle:   Java8新特性
 author:     luokangyuan
 catalog: true
 tags:
-    - Java8
+    - Java8
 ---
 ### lambda表达式
 在Java8中引入了一个新的操作符“->”,该操作符称为箭头操作符或Lambda操作符。
