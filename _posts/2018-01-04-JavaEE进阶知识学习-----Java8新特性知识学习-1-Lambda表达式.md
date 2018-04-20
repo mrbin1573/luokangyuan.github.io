@@ -1,9 +1,18 @@
-###lambda表达式
+---
+layout:     post
+title:     JavaEE进阶知识学习-----Java8新特性知识学习-1-Lambda表达式
+subtitle:   Java8新特性
+author:     luokangyuan
+catalog: true
+tags:
+    - Java8
+---
+### lambda表达式
 在Java8中引入了一个新的操作符“->”,该操作符称为箭头操作符或Lambda操作符。
 左侧：Lambda表示式的参数列表
 右侧：Lambda表达式中所要执行的功能
-####语法格式
-#####1.无参数，无返回值（）-> System.out.print("Hello Word");
+#### 语法格式
+##### 1.无参数，无返回值（）-> System.out.print("Hello Word");
 示例如下：
 
 	@Test
@@ -19,7 +28,7 @@
         Runnable r1 = () -> System.out.print("Hello Word");
         r1.run();
     }
-#####2.一个参数，无返回值（x）-> System.out.print(x);
+##### 2.一个参数，无返回值（x）-> System.out.print(x);
 
 	@Test
     public void test2(){
@@ -27,7 +36,7 @@
         con.accept("Hello Word");
     }
 如果只有一个参数，无返回值可以省略小括号不写。
-#####3.两个参数，有返回值，并且有多条执行语句
+##### 3.两个参数，有返回值，并且有多条执行语句
 
 	@Test
     public void test3(){
@@ -38,15 +47,15 @@
         int max = com.compare(4,5);
         System.out.println(max);
     }
-#####4.如果只有一条返回语句
+##### 4.如果只有一条返回语句
 
 	@Test
     public void test4(){
         Comparator<Integer> com = (x,y) -> Integer.compare(x,y);
     }
-#####4.lambda表达式中的参数类型可以省略不写，JVM可以根据上下文推断出类型
-####Lambda表达式需要函数式接口的支持。
-###函数式接口
+##### 4.lambda表达式中的参数类型可以省略不写，JVM可以根据上下文推断出类型
+#### Lambda表达式需要函数式接口的支持。
+### 函数式接口
 接口中只有一个抽象方法的接口，就叫函数式接口。可以使用注解@FunctionalInterface检查是否为函数式接口。
 
 	@FunctionalInterface
@@ -73,7 +82,7 @@
         System.out.println(num);
     }
 Lambda表达式左侧是函数式接口的参数，右侧是函数式接口的实现。
-####Lambda练习
+#### Lambda练习
 将集合中的员工排序，按照年龄从小到大排序，如果年龄相同就按照名称排序
 
 	public class TestLambda {
@@ -142,7 +151,7 @@ Lambda表达式左侧是函数式接口的参数，右侧是函数式接口的�
        operator(100L,200L,(x,y) -> x+y);
 	   operator(100L,200L,(x,y) -> x*y);
     }
-####总结
+#### 总结
 从上述代码中，我们可以看出Lambda表达式的好处，但是我们会发现，每次使用都会新建一个函数式接口，增加了很多麻烦，所以，Java8给我们增加了很多函数式接口，将在下一pain博客中学习。
 
 
