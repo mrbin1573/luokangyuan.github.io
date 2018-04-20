@@ -1,4 +1,16 @@
-####下面将简单介绍一下controller类的相关用法
+---
+layout:     post
+title:     SpringBoot中的日志框架
+subtitle:   SpringBoot中的日志框架学习
+date:       2018-040-18
+author:     luokangyuan
+catalog: true
+tags:
+    - SpringBoot
+    - 开发技巧
+    - Debug
+---
+#### 下面将简单介绍一下controller类的相关用法
 在上一篇博客中，我们也使用的Controller相关的注解，下面我们来简单的总结一下：
 1. @RestController处理Http请求，返回JSON格式的数据。
 2. @RequestMapping(value = "/hello",method = RequestMethod.GET)配置URL映射
@@ -27,12 +39,12 @@ RequestMapping类注解如下：
 	    }
 	}
 访问链接为http://localhost:8082/gire/demo/hello
-###如何获取参数
+### 如何获取参数
 1. @PathVariable获取URL中的数据
 2. @RequestParam获取请求参数的值
 3. @GetMapping组合注解
 
-####@PathVariable注解使用
+#### @PathVariable注解使用
 
 	@RestController
 	@RequestMapping("demo")
@@ -45,7 +57,7 @@ RequestMapping类注解如下：
 	    }
 	}
 访问链接如下：http://localhost:8082/gire/demo/hello/5，
-####@RequestParam注解使用
+#### @RequestParam注解使用
 如果使用传统的传参数http://localhost:8082/gire/demo/hello?id=5那么获取方式如下所示：
 
 	@RestController
@@ -71,5 +83,5 @@ RequestMapping类注解如下：
 	    }
 	}
 其中required要求是否必传，defaultValue是默认值，如果不传id则显示默认值。
-####组合注解
+#### 组合注解
 @RequestMapping(value = "/hello",method = RequestMethod.GET)这个注解可以使用 @GetMapping(value = "/hello")这个组合注解来替代，当然 @PutMapping、 @DeleteMapping等形式。
