@@ -5,7 +5,7 @@ subtitle:   Java8新特性
 author:     luokangyuan
 catalog: true
 tags:
-    - Java8
+    - Java8
 ---
 ### 什么是Stream
 Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对集合进行测操作，可以执行非常复杂的查找，过滤和映射数据的操作，使用Stream API对集合数据进行操作就类似于使用SQL执行的数据库查询查询，Stream API提供了一种高效且易于使用的处理数据的方式。
