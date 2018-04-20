@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:     SpringBoot中的日志框架
+title:     JavaEE进阶知识学习-----SpringBoot知识系统学习-2-日志框架
 subtitle:   SpringBoot中的日志框架学习
 author:     luokangyuan
 catalog: true
