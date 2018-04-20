@@ -6,7 +6,7 @@ author:     luokangyuan
 catalog: true
 tags:
     - SpringBoot
-    - 开发技巧 
+    - 数据库 
 ---
 ####下面学习的是数据库相关知识
 数据库使用的是MySQL，持久化技术使用的就是spring-data-jpa,RESTFul API如下
