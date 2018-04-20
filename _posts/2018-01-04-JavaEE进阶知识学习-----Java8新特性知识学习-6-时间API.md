@@ -1,6 +1,15 @@
-###LocalDateTime
+---
+layout:     post
+title:    JavaEE进阶知识学习-----Java8新特性知识学习-6-时间API
+subtitle:   Java8新特性
+author:     luokangyuan
+catalog: true
+tags:
+    - Java8
+---
+### LocalDateTime
 LocalDateTime是一个不可变的日期时间对象，代表日期时间，通常被视为年 - 月 - 日 - 时 - 分 - 秒。
-####方法摘要
+#### 方法摘要
 
 	Temporal adjustInto(Temporal temporal) 调整指定的时间对象与此对象具有相同的日期和时间。  
 	OffsetDateTime atOffset(ZoneOffset offset) 将此日期时间与偏移量相结合以创建 OffsetDateTime 。  
