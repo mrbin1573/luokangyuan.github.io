@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:     SpringBoot中的日志框架
-subtitle:   SpringBoot中的日志框架学习
+title:     JavaEE进阶知识学习-----SpringBoot基础知识-3-控制类知识
+subtitle:   SpringBoot中的控制类知识学习
 author:     luokangyuan
 catalog: true
 tags:
