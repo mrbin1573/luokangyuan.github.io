@@ -1,5 +1,16 @@
 
-
+---
+layout:     post
+title:     SpringBoot中的日志框架
+subtitle:   SpringBoot中的日志框架学习
+date:       2018-040-18
+author:     luokangyuan
+catalog: true
+tags:
+    - SpringBoot
+    - 开发技巧
+    - Debug
+---
 # 一、Spring Boot学习笔记-配置文件
 
 #### 1.yaml语法
