@@ -5,7 +5,8 @@ subtitle:   SpringBoot基础知识
 author:     luokangyuan
 catalog: true
 tags:
-    - 单元测试
+    - SpringBoot
+    - Debug
 ---
 ### 单元测试
 #### 1.先测试Services中的方法
