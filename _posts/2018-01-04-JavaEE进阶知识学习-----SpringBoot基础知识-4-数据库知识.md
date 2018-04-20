@@ -13,71 +13,77 @@ tags:
 ![](https://i.imgur.com/x2JhG2P.png)
 ####1.pom文件中添加依赖
 
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-data-jpa</artifactId>
-	</dependency>
-	
-	<dependency>
-		<groupId>mysql</groupId>
-		<artifactId>mysql-connector-java</artifactId>
-	</dependency>
+```xml
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+</dependency>
+```
 ####2.application.yml文件中配置数据库信息和jpa
-	
-	spring:
-	  profiles:
-	    active: prod
-	  datasource:
-	    driver-class-name: com.mysql.jdbc.Driver
-	    url: jdbc:mysql://127.0.0.1:3306/dbspringboot
-	    username: root
-	    password: 123456
-	  jpa:
-	    hibernate:
-	      ddl-auto: create
-	    show-sql: true
+
+```yaml
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbspringboot
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+```
 其中的 ddl-auto: create表示每次都会删除原先存在的表，就是说如果表中存在数据，运行程序数据就不存在了。
 也可以是 update：会创建表，如果表中有数据，不会删除表。
 ####3.创建一个实体类User，如下所示
 
-	@Entity
-	public class User {
-	    @Id
-	    @GeneratedValue
-	    private Integer id;
-	
-	    private String userName;
-	
-	    private Integer age;
-	
-	    public User(){
-	
-	    }
-	
-	    public Integer getId() {
-	        return id;
-	    }
-	
-	    public void setId(Integer id) {
-	        this.id = id;
-	    }
-	
-	    public String getUserName() {
-	        return userName;
-	    }
-	
-	    public void setUserName(String userName) {
-	        this.userName = userName;
-	    }
-	
-	    public Integer getAge() {
-	        return age;
-	    }
-	
-	    public void setAge(Integer age) {
-	        this.age = age;
-	    }
-	}
+```java
+@Entity
+public class User {
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    private String userName;
+
+    private Integer age;
+
+    public User(){
+
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+}
+```
 当我们再次启动程序的时候时候，dbspringboot数据库中就会多一个user表，其中表字段就是实体类所对应的字段，这是jpa相关的知识，具体将在以后仔细学习和记录。
 ####4.创建UserController
 
@@ -170,4 +176,4 @@ tags:
 上述代码中我们也扩展了使用年龄来查询用户，在UserRepository接口中我们扩展了这个方法如下所示：
 
 	//通过年龄查询，方法名有规定
-    public List<User> findByAge(Integer age);
+	public List<User> findByAge(Integer age);
