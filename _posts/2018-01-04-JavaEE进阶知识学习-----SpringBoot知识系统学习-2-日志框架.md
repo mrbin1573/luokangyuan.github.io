@@ -1,5 +1,3 @@
-
----
 layout:     post
 title:     SpringBoot中的日志框架
 subtitle:   SpringBoot中的日志框架学习
@@ -10,7 +8,6 @@ tags:
     - SpringBoot
     - 开发技巧
     - Debug
----
 
 # SpringBoot中的日志框架学习
 
