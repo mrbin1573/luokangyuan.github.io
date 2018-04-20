@@ -1,13 +1,22 @@
-###AOP统一处理请求日志
+---
+layout:     post
+title:     JavaEE进阶知识学习-----SpringBoot基础知识-2-配置文件知识
+subtitle:   SpringBoot基础知识
+author:     luokangyuan
+catalog: true
+tags:
+    - SpringBoot
+---
+### AOP统一处理请求日志
 AOP是一种编程范式，与编程语言无关，是一种程序设计思想。AOP:面向切面编程，OOP：面向对象编程，POP:面向过程编程，还有函数式编程等等。
-###AOP实例-记录每一个HTTP请求
-####1.添加依赖
+### AOP实例-记录每一个HTTP请求
+#### 1.添加依赖
 
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-aop</artifactId>
 	</dependency>
-####2.编写切面，切入点类
+#### 2.编写切面，切入点类
 
 	import org.aspectj.lang.JoinPoint;
 	import org.aspectj.lang.annotation.After;
@@ -60,13 +69,13 @@ AOP是一种编程范式，与编程语言无关，是一种程序设计思想�
 4.  @Before("log()")注解表示UserController类中的方法被访问前执行的方法
 5.  @After("log()")注解表示UserController类中的方法被访问后要执行的方法
 
-####3.启动程序，使用postman进行测试
-#####3.1测试查询用户列表
+#### 3.启动程序，使用postman进行测试
+##### 3.1测试查询用户列表
 ![](https://i.imgur.com/MLszY3E.png)
-#####测试结果为：
+##### 测试结果为：
 ![](https://i.imgur.com/vrv1Kwd.png)
-#####3.2测试添加一个用户
+##### 3.2测试添加一个用户
 ![](https://i.imgur.com/2MM3FWC.png)
-#####测试结果为：
+##### 测试结果为：
 ![](https://i.imgur.com/1dlGwz9.png)
 
