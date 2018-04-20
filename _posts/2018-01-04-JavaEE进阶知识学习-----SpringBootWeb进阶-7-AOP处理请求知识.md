@@ -5,7 +5,8 @@ subtitle:   SpringBoot基础知识
 author:     luokangyuan
 catalog: true
 tags:
-    - AOP
+    - SpringBoot
+    - AOP
 ---
 ### AOP统一处理请求日志
 AOP是一种编程范式，与编程语言无关，是一种程序设计思想。AOP:面向切面编程，OOP：面向对象编程，POP:面向过程编程，还有函数式编程等等。
