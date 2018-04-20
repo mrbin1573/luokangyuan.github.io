@@ -1,11 +1,11 @@
 ---
 layout:     post
-title:     JavaEE进阶知识学习-----SpringBoot基础知识-2-配置文件知识
+title:    JavaEE进阶知识学习-----SpringBootWeb进阶-7-AOP处理请求知识
 subtitle:   SpringBoot基础知识
 author:     luokangyuan
 catalog: true
 tags:
-    - SpringBoot
+    - AOP
 ---
 ### AOP统一处理请求日志
 AOP是一种编程范式，与编程语言无关，是一种程序设计思想。AOP:面向切面编程，OOP：面向对象编程，POP:面向过程编程，还有函数式编程等等。
