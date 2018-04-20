@@ -1,3 +1,14 @@
+---
+layout:     post
+title:     SpringBoot中的日志框架
+subtitle:   SpringBoot中的日志框架学习
+date:       2018-040-18
+author:     luokangyuan
+catalog: true
+tags:
+    - SpringBoot
+    - 开发技巧 
+---
 ####下面学习的是数据库相关知识
 数据库使用的是MySQL，持久化技术使用的就是spring-data-jpa,RESTFul API如下
 ![](https://i.imgur.com/x2JhG2P.png)
