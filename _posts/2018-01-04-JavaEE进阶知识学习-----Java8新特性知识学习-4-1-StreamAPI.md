@@ -1,15 +1,24 @@
-###什么是Stream
+---
+layout:     post
+title:    JavaEE进阶知识学习-----Java8新特性知识学习-4-1-StreamAPI
+subtitle:   Java8新特性
+author:     luokangyuan
+catalog: true
+tags:
+    - Java8
+---
+### 什么是Stream
 Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对集合进行测操作，可以执行非常复杂的查找，过滤和映射数据的操作，使用Stream API对集合数据进行操作就类似于使用SQL执行的数据库查询查询，Stream API提供了一种高效且易于使用的处理数据的方式。
 流（Stream）是数据渠道，用于操作数据源（集合、数组等）所生成的元素序列，“集合讲的是数据，流讲的是计算”，需要注意的是以下三点
 1. Stream自己不会存储元素
 2. Stream不会改变源对象，相会，他们会返回一个持有结果的新的Stream
 3. Stream操作是延迟执行的，这意味着他们会等到需要结果的时候才执行。
 
-###Stream使用方法
+### Stream使用方法
 1. 创建Stream：一个数据源（集合、数组）获取一个流
 2. 中间操作：一个中间操作链，对数据源的数据进行处理
 3. 终止操作：一个终止操作，执行中间操作链，并产生结果。
-####创建Stream的方法
+#### 创建Stream的方法
 1. 通过Collection系列提供的stream()或parallelStream()，如下：
 2. 通过Arrays中的静态方法stream()方法获取流
 3. 通过Stream类中的静态方法of()
@@ -42,13 +51,13 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
                 .limit(10)
                 .forEach(System.out::println);
 	}
-####中间操作
+#### 中间操作
 * filter----接受lambda,从流中排除某一些元素
 * limit----截断流，使其元素不超过给定的数量
 * skip(n)----跳过元素，返回一个扔掉了前n个元素的流，若流中元素不足n个，则返回一个空流
 * distinct----筛流，通过流生成元素的hashcode()和equals()去除重复元素
 
-#####filter示例
+##### filter示例
 
 	@Test
 	public void test1(){
@@ -61,11 +70,11 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
 	    //终止操作
 	    stream.forEach(System.out::println);
 	}
-######惰性求值和内部迭代
+###### 惰性求值和内部迭代
 1. 如果没有终止操作，是不会打印中间操作的，这就是流只有需要结果的时候才会被调用，这就是惰性求值。
 2. 上述打印是Stream自己给我们迭代输出的，这个就是内部迭代。
 
-#####筛选和切片示例如下
+##### 筛选和切片示例如下
 
 	@Test
 	public void test1(){
@@ -79,13 +88,13 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
 	    stream.forEach(System.out::println);
 	}
 说明：由于distinct是根据hashcode()和equals()去重，所以Employee中要重写equals和hashCode方法。
-####映射
+#### 映射
 1. map(Function f) 接收一个函数作为参数，该函数会被应用到每一个元素上，并将其映射成一个新的元素。
 2. mapToDouble(ToDoubleFunction f)接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的DoubleStream
 3. mapToLong(ToLongFunction f) 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的LongStream
 4. flatMap(Function f) 接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
 
-####map示例如下
+#### map示例如下
 
 	@Test
 	public void test2(){
@@ -99,7 +108,7 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
                 .forEach(System.out::println);
 	}
 
-####flatMap示例
+#### flatMap示例
 
 	@Test
 	public void test3(){
@@ -116,8 +125,8 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
 	    }
 	    return list.stream();
 	}
-####排序
-#####sorted()-自然排序（comparable）
+#### 排序
+##### sorted()-自然排序（comparable）
 	
 	@Test
 	    public void test4(){
@@ -127,7 +136,7 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
 	                .forEach(System.out::println);
 	    }
 	}
-#####sorted(Comparator com)-定制排序（Comparator）
+##### sorted(Comparator com)-定制排序（Comparator）
 
 	@Test
 	public void test5(){
@@ -140,9 +149,9 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
 	                }
 	            }).forEach(System.out::println);
 	}
-####终止操作
+#### 终止操作
 终止操作会从流的流水线生成结果，该结果可以是任何不是流的值，例如：List、Integer、void。
-#####查找和匹配
+##### 查找和匹配
 1. allMatch(Predicate p) 检查是否匹配所有的元素
 2. anyMatch(Predicate p) 检查是否至少匹配一个元素
 3. noneMatch(Predicate p) 检查是否没有匹配所有的元素
@@ -208,7 +217,7 @@ Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对
 	}
 
 
-#####归约
+##### 归约
 reduce(T iden,BinaryOperator b)可以将流中元素反复结合起来，得到一个值，返回T,示例如下：
 	
 	@Test
@@ -224,7 +233,7 @@ reduce(T iden,BinaryOperator b)可以将流中元素反复结合起来，得到�
 	    System.out.println(op.get());
 	}
 上述代码中使用map得到所有的工资，再有reduce将所有的工资累加，map和reduce配合使用情况比较多。
-#####收集
+##### 收集
 collect(Collector c)将流转换为其他形式，接收一个Collector接口的实现，用于给Stream中元素做汇总的方法。
 Colletor接口中的方法实现决定了如何对流执行收集操作（如收集到List，Set,Map）,但是Collectors实用类提供了很多静态的方法，可以方便的创建常用收集器实例，具体方法与实例如下：
 1. toList 返回List<T> 将流中元素搜集到List
