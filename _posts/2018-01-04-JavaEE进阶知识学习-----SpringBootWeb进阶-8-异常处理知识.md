@@ -5,9 +5,9 @@ subtitle:   SpringBoot基础知识
 author:     luokangyuan
 catalog: true
 tags:
-    - 异常处理
     - Exception
 ---
+
 ### SpringBoot中对异常的统一处理
 异常处理也可以说成是一种数据传输方式，简单来讲，可以在Services中抛出异常信息，在controller中接收异常信息，然后就可以返回到页面显示了。
 #### 异常处理实例
