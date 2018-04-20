@@ -1,5 +1,14 @@
-###单元测试
-####1.先测试Services中的方法
+---
+layout:     post
+title:     JavaEE进阶知识学习-----SpringBootWeb进阶-9-单元测试知识
+subtitle:   SpringBoot基础知识
+author:     luokangyuan
+catalog: true
+tags:
+    - 单元测试
+---
+### 单元测试
+#### 1.先测试Services中的方法
 
 	/**
 	 * 根据id查询一个用户
@@ -9,7 +18,7 @@
 	public User findOne(Integer id){
 	    return userRepository.findOne(id);
 	}
-####2.在项目目录中的test/java/com.study.springbootdemo中新建测试类
+#### 2.在项目目录中的test/java/com.study.springbootdemo中新建测试类
 
 	import com.study.springbootdemo.domain.User;
 	import com.study.springbootdemo.services.UserService;
@@ -33,18 +42,18 @@
 	    }
 	}
 说明：断言是指我们的预期结果是否程序的执行结果是否一致，其中使用了@RunWith(SpringRunner.class)注解、@SpringBootTest注解。
-####3.运行UserServicesTest，测试结果
+#### 3.运行UserServicesTest，测试结果
 ![](https://i.imgur.com/ImrPgsB.png)
-####IDEA简单方法进行测试
-#####第一步选中要测试的方法
+#### IDEA简单方法进行测试
+##### 第一步选中要测试的方法
 ![](https://i.imgur.com/MPFNCtq.png)
-#####第二步选择新建一个测试类
+##### 第二步选择新建一个测试类
 ![](https://i.imgur.com/o61ITQ2.png)
-#####第三步选择要测试的方法
+##### 第三步选择要测试的方法
 ![](https://i.imgur.com/fyFEW9l.png)
-#####第四步结果如下
+##### 第四步结果如下
 ![](https://i.imgur.com/a7A0BXA.png)
-####3.测试API(controller中的方法这里使用IDEA生成API测试类和方法，这里是要模仿发送请求的测试，如下所示：
+#### 3.测试API(controller中的方法这里使用IDEA生成API测试类和方法，这里是要模仿发送请求的测试，如下所示：
 
 	@RunWith(SpringRunner.class)
 	@SpringBootTest
