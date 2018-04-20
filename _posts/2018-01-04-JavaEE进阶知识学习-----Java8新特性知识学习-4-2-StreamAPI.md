@@ -5,7 +5,7 @@ subtitle:   Java8新特性
 author:     luokangyuan
 catalog: true
 tags:
-    - Java8
+    - Java8
 ---
 ### StreamAPI练习
 1.给定一个数字列表，返回一个由每一个数的平方构成的列表。
