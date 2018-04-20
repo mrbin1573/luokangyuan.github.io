@@ -5,7 +5,7 @@ subtitle:   SpringBoot基础知识
 author:     luokangyuan
 catalog: true
 tags:
-    - SpringBoot
+    -SpringBoot
 ---
 #### 前提准备
 1. 安装和配置Java1.8相关环境。
