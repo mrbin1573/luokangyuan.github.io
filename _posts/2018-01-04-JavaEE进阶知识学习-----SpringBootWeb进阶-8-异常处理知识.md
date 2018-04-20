@@ -1,8 +1,17 @@
-###SpringBoot中对异常的统一处理
+---
+layout:     post
+title:     JavaEE进阶知识学习-----SpringBootWeb进阶-8-异常处理知识
+subtitle:   SpringBoot基础知识
+author:     luokangyuan
+catalog: true
+tags:
+    - 异常处理
+---
+### SpringBoot中对异常的统一处理
 异常处理也可以说成是一种数据传输方式，简单来讲，可以在Services中抛出异常信息，在controller中接收异常信息，然后就可以返回到页面显示了。
-####异常处理实例
+#### 异常处理实例
 如果我们需要获取用户的年龄，并根据年龄进行判断，并作出不同的响应。
-#####1.首先我们会定义返回结果数据的通用类，如下：
+##### 1.首先我们会定义返回结果数据的通用类，如下：
 
 	public class Msg {
 
@@ -71,7 +80,7 @@
 	    user.setAge(user.getAge());
 	    return Msg.success().add("user",userRepository.save(user));
 	}
-#####3.测试
+##### 3.测试
 我们先测试失败的时候，我们开始做了一个年龄age的检验，不满足校验就会报错，如下：
 
 ![](https://i.imgur.com/X2Au6AA.png)
@@ -80,7 +89,7 @@
 
 ![](https://i.imgur.com/0T8pDcc.png)
 可以看出我们写的通用的返回类，返回给客户端的数据格式是一致的。上面仅仅是测试一下我们写的通用返回类，下面我们将继续完成对用户年龄的判断。
-#####4.Services中添加方法
+##### 4.Services中添加方法
 	public void getAge(Integer id){
 	    User user = userRepository.findOne(id);
 	    Integer age = user.getAge();
@@ -90,13 +99,13 @@
 	        //返回你刚工作不久吧
 	    }
 	}
-#####5.userController中根据年龄获取用户
+##### 5.userController中根据年龄获取用户
 	@GetMapping(value = "users/getAge/{id}")
 	public void getAge(@PathVariable("id") Integer id){
 	    userService.getAge(id);
 	}
 但是，在controller中怎么获取Services中的返回的值，可能有的或说将Services的返回值改为String，如果我们要做其他操作，要返回一个对象或者其他呢，当然还有很多方式可以实现，但是随着业务的复杂，我们最好的使用统一异常的方式较为好些。
-#####6.修改Services中的getAge方法
+##### 6.修改Services中的getAge方法
 
 	public void getAge(Integer id) throws Exception{
 	    User user = userRepository.findOne(id);
@@ -109,7 +118,7 @@
 	        throw new Exception("你刚工作不久吧!!!");
 	    }
 	}
-#####7.增加一个统一异常处理类
+##### 7.增加一个统一异常处理类
 
 	import com.study.springbootdemo.domain.Msg;
 	import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -126,14 +135,14 @@
 	        return Msg.fail(e.getMessage());
 	    }
 	}
-#####8.测试
+##### 8.测试
 首先先看我数据库中表的信息
 ![](https://i.imgur.com/UBokLLn.png)
 测试年龄小于20d的异常捕获和返回
 ![](https://i.imgur.com/i0mzGg7.png)
 测试年龄大于20小于30的异常捕获和返回
 ![](https://i.imgur.com/pEFhkg9.png)
-#####9.自定义异常类
+##### 9.自定义异常类
 使用Exception异常类只能抛出一个异常信息，throw new Exception("你还在上大学吧!!!");，如果我们要抛出其他的信息就要自定义异常类。
 
 	public class UserException extends RuntimeException{
@@ -153,7 +162,7 @@
 	        this.mes = mes;
 	    }
 	}
-#####10.修改Services类，抛出自定义异常类
+##### 10.修改Services类，抛出自定义异常类
 
 	public void getAge(Integer id) throws Exception{
 	    User user = userRepository.findOne(id);
@@ -166,7 +175,7 @@
 	        throw new UserException("年龄大于20且小于30的异常","你刚工作不久吧!!!");
 	    }
 	}
-#####11.异常捕获类
+##### 11.异常捕获类
 
 	@ControllerAdvice
 	public class ExceptionHandle {
@@ -185,7 +194,7 @@
 	        return Msg.fail(e.getMessage());
 	    }
 	}
-#####12优化Services
+##### 12优化Services
 如果有很多的异常信息在各个类中抛出，修改和维护就特别困难，所以我们使用枚举来统一管理，新建一个枚举
 
 	public enum ResultEnum {
