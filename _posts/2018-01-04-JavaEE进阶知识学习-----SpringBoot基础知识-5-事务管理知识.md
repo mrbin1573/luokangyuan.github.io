@@ -1,3 +1,16 @@
+---
+layout:     post
+title:     SpringBoot中的日志框架
+subtitle:   SpringBoot中的日志框架学习
+date:       2018-040-18
+author:     luokangyuan
+catalog: true
+tags:
+    - SpringBoot
+    - 开发技巧
+    - Debug
+---
+
 ####事务管理
 事务就是多条操作同时成功或者失败。例如同时新增两个用户，同时插入成功才插入到数据库表中，否则不插入。
 ####1.新增了一个Services类，如下所示：
