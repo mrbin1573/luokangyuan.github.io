@@ -1,4 +1,13 @@
-###StreamAPI练习
+---
+layout:     post
+title:      JavaEE进阶知识学习-----Java8新特性知识学习-4-2-StreamAPI
+subtitle:   Java8新特性
+author:     luokangyuan
+catalog: true
+tags:
+    - Java8
+---
+### StreamAPI练习
 1.给定一个数字列表，返回一个由每一个数的平方构成的列表。
 
 	@Test
@@ -18,7 +27,7 @@
 	           .reduce(Integer::sum);
 	  System.out.println(count.get());
 	}
-####交易员类
+#### 交易员类
 	
 	public class Trader {
 	
@@ -55,7 +64,7 @@
 		}
 	
 	}
-####交易类
+#### 交易类
 
 	public class Transaction {
 	
@@ -102,7 +111,7 @@
 					+ value + "]";
 		}
 	}
-####练习
+#### 练习
 
 	public class TestTransaction {
 		
