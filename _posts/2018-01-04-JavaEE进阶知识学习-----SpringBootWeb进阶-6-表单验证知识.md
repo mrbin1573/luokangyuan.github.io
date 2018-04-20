@@ -1,3 +1,12 @@
+---
+layout:     post
+title:     JavaEE进阶知识学习-----SpringBootWeb进阶-6-表单验证知识
+subtitle:   SpringBoot基础知识
+author:     luokangyuan
+catalog: true
+tags:
+    - 表单验证
+---
 下面是接着基础知识的代码整理后，如下所示：
 ![](https://i.imgur.com/GkfsJ8V.png)
 在前面的学习中，我们写了一个插入用户的方法，如下：
@@ -40,7 +49,7 @@
 2. 使用@Valid注解表示校验user这个对象
 3. 校验结果存在在BindingResult bindingResult这个对象中
 
-####SpringBoot采用的是Hibernate-validator校验规则，常用的校验规则如下所示：
+#### SpringBoot采用的是Hibernate-validator校验规则，常用的校验规则如下所示：
 
 1. @AssertTrue 用于Boolean字段，该字段只能为true
 2. @AssertFalse 用于Boolean字段，该字段只能为false
