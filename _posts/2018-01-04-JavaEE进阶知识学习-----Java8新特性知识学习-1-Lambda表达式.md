@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:     JavaEE进阶知识学习-----Java8新特性知识学习-1-Lambda表达式
+title:     java8新特性学习-1-Lambda表达式
 subtitle:   Java8新特性
-author:     luokangyuan
+author:     罗康元
 catalog: true
 tags:
     - Java8
