@@ -5,7 +5,7 @@ subtitle:   Java8新特性
 author:     luokangyuan
 catalog: true
 tags:
-    - Java8
+    - Java8
 ---
 ### LocalDateTime
 LocalDateTime是一个不可变的日期时间对象，代表日期时间，通常被视为年 - 月 - 日 - 时 - 分 - 秒。
