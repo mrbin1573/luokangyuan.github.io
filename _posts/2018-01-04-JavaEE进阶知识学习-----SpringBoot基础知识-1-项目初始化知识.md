@@ -6,7 +6,7 @@ author:     luokangyuan
 catalog: true
 tags:
     - SpringBoot
-    - Debug
+    - 初始化
 ---
 #### 前提准备
 1. 安装和配置Java1.8相关环境。
