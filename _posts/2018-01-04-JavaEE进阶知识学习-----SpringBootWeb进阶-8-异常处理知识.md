@@ -4,9 +4,7 @@ title:     JavaEE进阶知识学习-----SpringBootWeb进阶-8-异常处理知识
 subtitle:   SpringBoot基础知识
 author:     luokangyuan
 catalog: true
-tags:
-    - Exception
-    - Exception
+tags: Exception,异常处理
 ---
 
 ### SpringBoot中对异常的统一处理
