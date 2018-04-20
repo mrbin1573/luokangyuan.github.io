@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:     SpringBoot中的日志框架
-subtitle:   SpringBoot中的日志框架学习
+title:     JavaEE进阶知识学习-----SpringBoot知识系统学习-1-配置文件
+subtitle:   SpringBoot中的配置文件学习
 date:       2018-04-18
 author:     luokangyuan
 catalog: true
