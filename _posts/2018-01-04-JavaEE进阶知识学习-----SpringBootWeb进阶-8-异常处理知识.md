@@ -6,6 +6,7 @@ author:     luokangyuan
 catalog: true
 tags:
     - Exception
+    - Exception
 ---
 
 ### SpringBoot中对异常的统一处理
