@@ -1,4 +1,3 @@
-
 ---
 layout:     post
 title:     SpringBoot中的日志框架
@@ -9,7 +8,6 @@ catalog: true
 tags:
     - SpringBoot
     - 开发技巧
-    - Debug
 ---
 # 一、Spring Boot学习笔记-配置文件
 
