@@ -5,7 +5,8 @@ subtitle:   SpringBoot基础知识
 author:     luokangyuan
 catalog: true
 tags:
-    - 表单验证
+    - SpringBoot
+    - Debug
 ---
 下面是接着基础知识的代码整理后，如下所示：
 ![](https://i.imgur.com/GkfsJ8V.png)
